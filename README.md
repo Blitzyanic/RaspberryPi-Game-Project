@@ -144,7 +144,7 @@ Distributed under the GNU GENERAL PUBLIC LICENSE V3. See `LICENSE` for more info
 <!-- CONTACT -->
 ## Contact
 
-Yanic - yanic.dev@gmail.com
+Yanic - yanic.dev@gmail.com - https://github.com/Blitzyanic
 
 Nils  - [@puckiiOLykos](https://x.com/puckiiOLykos) - https://github.com/derpuckii
 
