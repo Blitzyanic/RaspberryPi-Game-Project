@@ -133,6 +133,7 @@ This is an example of how to list things you need to use the software and how to
 
 Optional:
 - [ ] add title screen
+- [ ] add death screen
 
 See the [open issues](https://github.com/Blitzyanic/RaspberryPi-Game-Project/issues) for a full list of proposed features (and known issues).
 
