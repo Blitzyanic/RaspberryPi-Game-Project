@@ -5,4 +5,4 @@ python -m venv env
 .\env\Scripts\Activate.ps1
 
 # Installiert die erforderlichen Python-Pakete
-pip install pygame RPi.GPIO
+pip install pygame RPi.GPIO pcf8591-library
