@@ -78,12 +78,8 @@ this repo is a pygame [TODO: arcade game] clone for the raspberry pi with GPIO c
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
-
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
 * python
 * virtualenv (for python)
 * raspberry pi 4 B or 5 B
@@ -94,30 +90,39 @@ This is an example of how to list things you need to use the software and how to
 * 1x Joystick module
 * 1x Breadboard
 * 1x PCF8591 ADC module
-  ```sh
-  npm install npm@latest -g
-  ```
 
 ### Installation
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
    git clone https://github.com/Blitzyanic/RaspberryPi-Game-Project.git
    ```
-3. Install NPM packages
+2. Install Python Packages
    ```sh
-   npm install
+   chmod +x INSTALL_DEV_STUFF_FOR_LINUX.sh
+   ./INSTALL_DEV_STUFF_FOR_LINUX.sh
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
+3. Follow the Docs for Raspberry Pi and GPIO setup
+https://github.com/Blitzyanic/RaspberryPi-Game-Project/tree/main/docs
+4. start the Program 
+  ```sh
+   python src/game/main.py
    ```
-5. Change git remote url to avoid accidental pushes to base project
-   ```sh
-   git remote set-url origin github_username/repo_name
-   git remote -v # confirm the changes
-   ```
+
+make sure the following packages are installed on your raspberry or linux development machine:
+for Debian-Based (Rasbian)
+```sh
+sudo apt install python3 python3-virtualenv
+```
+for Arch-Based:
+```sh
+sudo pacman -S python python-virtualenv 
+```
+
+if you want to Develop on a Windows machine install Python and run
+```powershell
+.\INSTALL_DEV_STUFF_FOR_WINDOWS.ps1
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -168,6 +173,18 @@ Project Link: [https://github.com/Blitzyanic/RaspberryPi-Game-Project](https://g
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
+
+# Usefull Links:
+[Python](https://www.python.org/)
+[PyGame](https://www.pygame.org/docs/)
+[PyCharm¹ (Recomended IDE)](https://www.jetbrains.com/de-de/pycharm/download/)
+
+<br>
+<br>
+<br>
+
+_¹PyCharm Community is free, the Download link is below the Professional_
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 <!-- MARKDOWN LINKS & IMAGES -->
