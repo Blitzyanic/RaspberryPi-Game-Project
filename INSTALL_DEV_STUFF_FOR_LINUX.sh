@@ -1,8 +1,12 @@
-# create venv for libs
+# Creates a virtual environment
 virtualenv env
 
-# activate venv for current shell
-source env/bin/activate
+# Activates the virtual eironment
+if [ "$SHELL" == "/bin/fish" ]; then
+    source env/bin/activate.fish    
+else
+    source env/bin/activate
+fi
 
-# install deps
+# Installs the required Python packages
 pip install pygame RPi.GPIO pcf8591-library

@@ -1,8 +1,8 @@
-# Erstellt eine virtuelle Umgebung
+# Creates a virtual environment
 python -m venv env
 
-# Aktiviert die virtuelle Umgebung
+# Activates the virtual environment
 .\env\Scripts\Activate.ps1
 
-# Installiert die erforderlichen Python-Pakete
+# Installs the required Python packages
 pip install pygame RPi.GPIO pcf8591-library
