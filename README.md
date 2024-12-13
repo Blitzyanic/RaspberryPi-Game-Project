@@ -15,6 +15,7 @@
   <a href="https://github.com/Blitzyanic/RaspberryPi-Game-Project">
     <img src="docs/img/logo.jpg" alt="Logo" width="80" height="80">
   </a>
+  <br>
   *note: logo is ai generated
 
 <h3 align="center">Raspberry Pi Game Project</h3>
