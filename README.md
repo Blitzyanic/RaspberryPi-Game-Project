@@ -56,15 +56,21 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-Here's a blank template to get started. To avoid retyping too much info, do a search and replace with your text editor for the following: `github_username`, `repo_name`, `twitter_handle`, `linkedin_username`, `email_client`, `email`, `project_title`, `project_description`, `project_license`
+this repo is a pygame [TODO: arcade game] clone for the raspberry pi with GPIO controls 
+
+```
+- made for school
+- fork but not push to base project
+- some elements might be in german
+```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 
 ### Built With
-* [![Python][Python.org]][Python-url]
-
+<img src="https://img.shields.io/badge/Python-black?style=for-the-badge&logo=python&logoColor=yellow" />
+<img src="https://img.shields.io/badge/Raspberry%20Pi-A22846?style=for-the-badge&logo=Raspberry%20Pi&logoColor=white" />
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
@@ -78,7 +84,16 @@ To get a local copy up and running follow these simple example steps.
 ### Prerequisites
 
 This is an example of how to list things you need to use the software and how to install them.
-* npm
+* python
+* virtualenv (for python)
+* raspberry pi 4 B or 5 B
+* jump wires
+* 3x LED
+* 3x 220 Ohm resistor
+* 1x Button module
+* 1x Joystick module
+* 1x Breadboard
+* 1x PCF8591 ADC module
   ```sh
   npm install npm@latest -g
   ```
@@ -166,6 +181,4 @@ Project Link: [https://github.com/Blitzyanic/RaspberryPi-Game-Project](https://g
 [issues-url]: https://github.com/Blitzyanic/RaspberryPi-Game-Project/issues
 [license-shield]: https://img.shields.io/github/license/Blitzyanic/RaspberryPi-Game-Project.svg?style=for-the-badge
 [license-url]: https://github.com/Blitzyanic/RaspberryPi-Game-Project/blob/master/LICENSE.txt
-[product-screenshot]: images/screenshot.png
-[Pyhon.org]: https://img.shields.io/badge/python-000000?style=for-the-badge&logo=python&logoColor=white
-[Python-url]: https://www.python.org/
+[product-screenshot]: docs/img/sample.png
