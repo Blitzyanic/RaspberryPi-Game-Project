@@ -9,6 +9,13 @@
 [![Issues][issues-shield]][issues-url]
 [![project_license][license-shield]][license-url]
 
+<!-- PROJECT LOGO -->
+<br />
+<div align="center">
+  <a href="https://github.com/Blitzyanic/RaspberryPi-Game-Project">
+    <img src="docs/img/logo.jpg" alt="Logo" width="80" height="80">
+  </a>
+  *note: logo is ai generated
 
 <h3 align="center">Raspberry Pi Game Project</h3>
 
@@ -56,7 +63,7 @@
 
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
 
-this repo is a pygame [TODO: arcade game] clone for the raspberry pi with GPIO controls 
+this repo is a pygame Tetris clone for the raspberry pi with GPIO controls 
 
 ```
 - made for school
