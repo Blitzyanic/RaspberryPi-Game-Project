@@ -14,4 +14,4 @@ Write-Host "Note this Project uses more libs then pygame but RPi.GPIO, gpiod, sm
 
 Write-Host "`n" -NoNewline
 Write-Host "run the following command: " -ForegroundColor Blue
-Write-Host "source env\bin\activate.ps1" -ForegroundColor White
+Write-Host ".\env\Scripts\Activate.ps1" -ForegroundColor White
