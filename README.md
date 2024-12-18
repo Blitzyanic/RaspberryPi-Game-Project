@@ -13,7 +13,7 @@
 <br />
 <div align="center">
   <a href="https://github.com/Blitzyanic/RaspberryPi-Game-Project">
-    <img src="docs/img/logo.jpg" alt="Logo" width="80" height="80">
+    <img src="docs/img/logo.png" alt="Logo" width="80" height="80">
   </a>
   <br>
   *note: logo is ai generated
@@ -103,33 +103,34 @@ this repo is a pygame Tetris clone for the raspberry pi with GPIO controls
 
 1. Clone the repo
    ```sh
-   git clone https://github.com/Blitzyanic/RaspberryPi-Game-Project.git
+   $ git clone https://github.com/Blitzyanic/RaspberryPi-Game-Project.git
    ```
 2. Install Python Packages
    ```sh
-   chmod +x INSTALL_DEV_STUFF_FOR_LINUX.sh
-   ./INSTALL_DEV_STUFF_FOR_LINUX.sh
+   $ chmod +x INSTALL_DEV_STUFF_FOR_LINUX.sh
+   $ ./INSTALL_DEV_STUFF_FOR_LINUX.sh
    ```
 3. Follow the Docs for Raspberry Pi and GPIO setup
 https://github.com/Blitzyanic/RaspberryPi-Game-Project/tree/main/docs
 4. start the Program 
   ```sh
-   python src/game/main.py
+   $ python src/game/main.py
    ```
 
 make sure the following packages are installed on your raspberry or linux development machine:
+
 for Debian-Based (Rasbian)
 ```sh
-sudo apt install python3 python3-virtualenv
+$ sudo apt install python3 python3-virtualenv
 ```
 for Arch-Based:
 ```sh
-sudo pacman -S python python-virtualenv 
+$ sudo pacman -S python python-virtualenv 
 ```
 
 if you want to Develop on a Windows machine install Python and run
 ```powershell
-.\INSTALL_DEV_STUFF_FOR_WINDOWS.ps1
+$ .\INSTALL_DEV_STUFF_FOR_WINDOWS.ps1
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
@@ -184,7 +185,9 @@ Project Link: [https://github.com/Blitzyanic/RaspberryPi-Game-Project](https://g
 
 # Usefull Links:
 [Python](https://www.python.org/)
+
 [PyGame](https://www.pygame.org/docs/)
+
 [PyCharm¹ (Recomended IDE)](https://www.jetbrains.com/de-de/pycharm/download/)
 
 <br>
