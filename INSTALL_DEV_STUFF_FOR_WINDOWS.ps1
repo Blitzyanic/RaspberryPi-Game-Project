@@ -5,10 +5,12 @@ python -m venv env
 .\env\Scripts\Activate.ps1
 
 # Installs the required Python packages
-pip install pygame RPi.GPIO gpiod smbus
+pip install pygame
 
 Write-Host "`n" -NoNewline
 Write-Host "Finish installation" -ForegroundColor Green
+
+Write-Host "Note this Project uses more libs then pygame but RPi.GPIO, gpiod, smbus are not usable on Windows" -ForegroundColor Red
 
 Write-Host "`n" -NoNewline
 Write-Host "run the following command: " -ForegroundColor Blue
