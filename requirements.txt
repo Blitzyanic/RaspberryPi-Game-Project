@@ -1,3 +1,2 @@
-gpiod==2.2.3
 pygame==2.6.1
 RPi.GPIO==0.7.1

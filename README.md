@@ -90,7 +90,7 @@ this repo is a pygame Tetris clone for the raspberry pi with GPIO controls
 
 * python
 * virtualenv (for python)
-* raspberry pi 4 B or 5 B
+* raspberry pi 4 B
 * jump wires
 * 3x LED
 * 3x 220 Ohm resistor
@@ -107,8 +107,8 @@ this repo is a pygame Tetris clone for the raspberry pi with GPIO controls
    ```
 2. Install Python Packages
    ```sh
-   $ python -m venv venv
-   $ . venv/bin/activate
+   $ python -m venv .venv
+   $ source .venv/bin/activate
    $ pip install -r requirements.txt
    ```
 3. Follow the Docs for Raspberry Pi and GPIO setup
@@ -123,33 +123,15 @@ for Debian-Based (Rasbian)
 ```sh
 $ sudo apt install python3 python3-virtualenv
 ```
-for Arch-Based:
-```sh
-$ sudo pacman -S python python-virtualenv 
-```
 
 if you want to develop on a Windows machine
 ```sh
-$ python -m venv venv
-$ .\env\Scripts\Activate.ps1
+$ python -m venv .venv
+$ .\.venv\Scripts\Activate.ps1
 $ pip install -r requirements.txt
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-<!-- ROADMAP -->
-## Roadmap
-
-- [ ] add Game
-- [ ] add Raspberry Pi GPIO support
-  - [ ] add Joystick support
-  - [ ] add Button support
-  - [ ] add LED support
-
-Optional:
-- [ ] add title screen
-- [ ] add death screen
 
 See the [open issues](https://github.com/Blitzyanic/RaspberryPi-Game-Project/issues) for a full list of proposed features (and known issues).
 
