@@ -1,6 +1,6 @@
 import pygame
 import random
-import time
+import src.raspberry.main as rasp
 
 # Farben für die verschiedenen Tetris-Steine
 colors = [
@@ -198,6 +198,14 @@ while not done:
                 pressing_down = False
             if event.key == pygame.K_ESCAPE:
                 game.__init__(20, 10)  # Das Spiel zurücksetzen
+
+            # Joystick-Eingaben verarbeiten
+            vrx_value = rasp.read_adc(0)
+            if vrx_value is not None:
+                if vrx_value < 100:
+                    game.go_side(-1)
+                elif vrx_value > 225:
+                    game.go_side(1)
 
     # Wenn die nach unten-Taste losgelassen wird, stoppe das Fallen
     if event.type == pygame.KEYUP:

@@ -17,6 +17,7 @@ GPIO.setmode(GPIO.BCM)
 bus = smbus2.SMBus(1)
 address = 0x48  # Address of the PCF8591 ADC module
 
+
 def read_adc(channel):
     try:
         bus.write_byte(address, channel)
@@ -25,6 +26,7 @@ def read_adc(channel):
     except OSError as e:
         print(f"I2C communication error: {e}")
         return None
+
 
 try:
     while True:
