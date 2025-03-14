@@ -180,9 +180,6 @@ counter = 0
 
 pressing_down = False  # Wird verwendet, um festzustellen, ob der Spieler die Pfeiltaste nach unten gedrückt hält
 
-# Raspberry Pi GPIO initialisieren
-vrx_value = read_adc(0)
-
 while not done:
     if game.figure is None:
         game.new_figure()  # Erzeuge einen neuen Tetris-Stein, wenn keiner vorhanden ist
@@ -194,6 +191,15 @@ while not done:
     if counter % (fps // game.level // 2) == 0 or pressing_down:
         if game.state == "start":
             game.go_down()
+
+    # Raspberry Pi GPIO initialisieren
+    vrx_value = read_adc(0)
+    if vrx_value is not None:
+        if vrx_value < 100:
+            game.go_side(-1)  # Move left
+        elif vrx_value > 225:
+            game.go_side(1)  # Move right
+
 #TODO
     # Verarbeite Tasteneingaben
     for event in pygame.event.get():
@@ -216,11 +222,6 @@ while not done:
                 pressing_down = False
             if event.key == pygame.K_ESCAPE:
                 game.__init__(20, 10)  # Das Spiel zurücksetzen
-
-    if vrx_value < 100:
-        game.go_side(-1)
-    elif vrx_value > 225:
-        game.go_side(1)
 
     # Wenn die nach unten-Taste losgelassen wird, stoppe das Fallen
     if event.type == pygame.KEYUP:
