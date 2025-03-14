@@ -28,18 +28,18 @@ def read_adc(channel):
         return None
 
 
-try:
-    while True:
-        # Read the analog value from the joystick's VRX pin (channel 0)
-        vrx_value = read_adc(0)
-        if vrx_value is not None:
-            if vrx_value < 100:
-                print("Joystick moved to the left")
-            elif vrx_value > 225:
-                print("Joystick moved to the right")
-            else:
-                print("Joystick is idle")
-        time.sleep(0.1)  # Wait for 100 milliseconds before reading again
-except KeyboardInterrupt:
+#try:
+#    while True:
+#        # Read the analog value from the joystick's VRX pin (channel 0)
+#        vrx_value = read_adc(0)
+#        if vrx_value is not None:
+#            if vrx_value < 100:
+#                print("Joystick moved to the left")
+#            elif vrx_value > 225:
+#                print("Joystick moved to the right")
+#            else:
+#                print("Joystick is idle")
+#        time.sleep(0.1)  # Wait for 100 milliseconds before reading again
+#except KeyboardInterrupt:
     # Clean up GPIO settings before exiting
-    GPIO.cleanup()
+#    GPIO.cleanup()
