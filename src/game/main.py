@@ -199,16 +199,16 @@ while not done:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             done = True
-        if not event.type == pygame.KEYDOWN:
+        if event.type == pygame.KEYDOWN:
             if event.key == pygame.K_UP:
                 game.rotate()
                 pressing_down = False
             if event.key == pygame.K_DOWN:
                 pressing_down = True
-            if event.key == pygame.K_LEFT or vrx_value < 100:
+            if event.key == pygame.K_LEFT:
                 game.go_side(-1)
                 pressing_down = False
-            if event.key == pygame.K_RIGHT or vrx_value > 225:
+            if event.key == pygame.K_RIGHT:
                 game.go_side(1)
                 pressing_down = False
             if event.key == pygame.K_SPACE:
@@ -216,6 +216,11 @@ while not done:
                 pressing_down = False
             if event.key == pygame.K_ESCAPE:
                 game.__init__(20, 10)  # Das Spiel zurücksetzen
+
+    if vrx_value < 100:
+        game.go_side(-1)
+    elif vrx_value > 225:
+        game.go_side(1)
 
     # Wenn die nach unten-Taste losgelassen wird, stoppe das Fallen
     if event.type == pygame.KEYUP:
