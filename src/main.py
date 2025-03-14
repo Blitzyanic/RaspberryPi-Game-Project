@@ -151,6 +151,8 @@ GPIO.setmode(GPIO.BCM)
 bus = smbus2.SMBus(1)
 address = 0x48  # Address of the PCF8591 ADC module
 
+GPIO.setup(14, GPIO.IN)
+
 def read_adc(channel):
     try:
         bus.write_byte(address, channel)
@@ -199,6 +201,9 @@ while not done:
             game.go_side(-1)  # Move left
         elif vrx_value > 225:
             game.go_side(1)  # Move right
+
+    if GPIO.input(14) == 0:
+        game.rotate()  # Rotate the figure
 
 #TODO
     # Verarbeite Tasteneingaben
