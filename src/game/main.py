@@ -1,10 +1,8 @@
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..', '..')))
+import RPi.GPIO as GPIO
+import smbus2
 
 import pygame
 import random
-import src.raspberry.main as rasp
 
 # Farben für die verschiedenen Tetris-Steine
 colors = [
@@ -148,6 +146,19 @@ class Tetris:
 
 # Initialisiere das Spiel mit pygame
 pygame.init()
+GPIO.setmode(GPIO.BCM)
+
+bus = smbus2.SMBus(1)
+address = 0x48  # Address of the PCF8591 ADC module
+
+def read_adc(channel):
+    try:
+        bus.write_byte(address, channel)
+        bus.read_byte(address)  # Dummy read to start conversion
+        return bus.read_byte(address)
+    except OSError as e:
+        print(f"I2C communication error: {e}")
+        return None
 
 # Farben für das Spiel
 BLACK = (0, 0, 0)
@@ -170,7 +181,7 @@ counter = 0
 pressing_down = False  # Wird verwendet, um festzustellen, ob der Spieler die Pfeiltaste nach unten gedrückt hält
 
 # Raspberry Pi GPIO initialisieren
-vrx_value = rasp.read_adc(0)
+vrx_value = read_adc(0)
 
 while not done:
     if game.figure is None:
@@ -188,7 +199,7 @@ while not done:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             done = True
-        if event.type == pygame.KEYDOWN:
+        if not event.type == pygame.KEYDOWN:
             if event.key == pygame.K_UP:
                 game.rotate()
                 pressing_down = False
