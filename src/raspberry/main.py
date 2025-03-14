@@ -1,5 +1,4 @@
 import RPi.GPIO as GPIO
-import time
 import smbus2
 
 # Set the GPIO mode to BCM
