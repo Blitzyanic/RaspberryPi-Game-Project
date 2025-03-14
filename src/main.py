@@ -1,3 +1,5 @@
+import time
+
 import RPi.GPIO as GPIO
 import smbus2
 
@@ -204,6 +206,7 @@ while not done:
 
     if GPIO.input(14) == 0:
         game.rotate()  # Rotate the figure
+        time.sleep(0.1)
 
 #TODO
     # Verarbeite Tasteneingaben
