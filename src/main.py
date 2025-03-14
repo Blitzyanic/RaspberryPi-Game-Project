@@ -202,7 +202,7 @@ while not done:
         elif vrx_value > 225:
             game.go_side(1)  # Move right
 
-    if GPIO.input(14) == 0:
+    if GPIO.input(14) == 1:
         game.rotate()  # Rotate the figure
 
 #TODO
