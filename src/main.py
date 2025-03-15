@@ -156,7 +156,8 @@ class Rpi:
         GPIO.setup(14, GPIO.IN)
         self.last_joystick_action = time.time()
         self.joystick_delay = 0.2  # Delay in seconds between joystick actions
-        self.last_button_state = 1
+        self.last_button_action = time.time()
+        self.button_delay = 0.3  # Delay in seconds between button actions
 
     def read_joystick(self):
         try:
@@ -168,11 +169,17 @@ class Rpi:
             return None
 
     def get_button(self):
-        if self.last_button_state == GPIO.input(14):
-            return False
-
         if GPIO.input(14) == 0:
             return True
+        return False
+
+    def process_button(self, game):
+        current_time = time.time()
+        if current_time - self.last_button_action >= self.button_delay:
+            if self.get_button():
+                game.rotate()  # Rotate the figure
+                self.last_button_action = current_time
+                return True
         return False
 
     def process_joystick(self, game):
@@ -226,9 +233,7 @@ while not done:
 
     rpi.process_joystick(game)
 
-    if rpi.get_button():
-        game.rotate()  # Rotate the figure
-        time.sleep(0.1)
+    rpi.process_button(game)
 
     # Verarbeite Tasteneingaben
     for event in pygame.event.get():
