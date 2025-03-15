@@ -7,6 +7,13 @@
 # AIN0     <-->  VRX (Joystick)
 
 
+# Raspberry     LED
+# ---------     ---
+# 34 GND    <-> - Bar
+# 11 GPIO17 <-> - LED
+# 13 GPIO27 <-> - LED
+# 15 GPIO22 <-> - LED
+
 
 
 # Set the GPIO mode to BCM

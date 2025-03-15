@@ -151,9 +151,13 @@ class Tetris:
 
 class Rpi:
     def __init__(self):
+        GPIO.setup(14, GPIO.IN)
+        GPIO.setup(17, GPIO.OUT)
+        GPIO.setup(27, GPIO.OUT)
+        GPIO.setup(22, GPIO.OUT)
+
         self.bus = smbus2.SMBus(1)
         self.address = 0x48
-        GPIO.setup(14, GPIO.IN)
         self.last_joystick_action = time.time()
         self.joystick_delay = 0.2  # Delay in seconds between joystick actions
         self.last_button_action = time.time()
@@ -194,10 +198,25 @@ class Rpi:
                     game.go_side(1)  # Move right
                     self.last_joystick_action = current_time
 
+    def reset_game(self):
+        GPIO.output(17, GPIO.HIGH)
+        GPIO.output(27, GPIO.HIGH)
+        GPIO.output(22, GPIO.HIGH)
+
+    def remove_life(self, lives):
+        if lives > 0:
+            lives -= 1
+            if lives == 2:
+                GPIO.output(17, GPIO.LOW)
+            elif lives == 1:
+                GPIO.output(27, GPIO.LOW)
+            elif lives == 0:
+                GPIO.output(22, GPIO.LOW)
+
 # Initialisiere das Spiel mit pygame
 pygame.init()
 rpi = Rpi()
-
+rpi.reset_game()
 
 # Farben für das Spiel
 BLACK = (0, 0, 0)
@@ -217,6 +236,8 @@ fps = 25  # Frames pro Sekunde
 game = Tetris(20, 10)  # Erstelle ein Tetris-Spiel mit einem Spielfeld von 20x10
 counter = 0
 
+previous_lives = game.lives  # Track lives to detect changes
+
 pressing_down = False  # Wird verwendet, um festzustellen, ob der Spieler die Pfeiltaste nach unten gedrückt hält
 
 while not done:
@@ -225,6 +246,11 @@ while not done:
     counter += 1
     if counter > 100000:
         counter = 0
+
+    # Check if player lost a life
+    if previous_lives > game.lives:
+        rpi.remove_life(previous_lives)
+        previous_lives = game.lives
 
     # Das Spiel bewegt den Stein nach unten, wenn genügend Zeit vergangen ist oder der Spieler nach unten drückt
     if counter % (fps // game.level // 2) == 0 or pressing_down:
@@ -256,6 +282,8 @@ while not done:
                 pressing_down = False
             if event.key == pygame.K_ESCAPE:
                 game.__init__(20, 10)  # Das Spiel zurücksetzen
+                rpi.reset_game()
+                previous_lives = game.lives  # Reset the life counter
 
     # Wenn die nach unten-Taste losgelassen wird, stoppe das Fallen
     if event.type == pygame.KEYUP:
