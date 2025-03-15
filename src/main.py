@@ -276,7 +276,7 @@ while not done:
 
     rpi.process_joystick(game)
 
-#    rpi.process_button(game)
+    rpi.process_button(game)
 
     # Verarbeite Tasteneingaben
     for event in pygame.event.get():
