@@ -211,11 +211,8 @@ class Rpi:
             # Read Y-axis for down movement
             joystick_y = self.read_joystick_y()
             if joystick_y is not None:
-                if joystick_y > 225:  # Joystick pushed down
+                if joystick_y < 100:  # Joystick pushed down
                     game.go_down()  # Move block down
-                    self.last_joystick_action = current_time
-                elif joystick_y < 100:  # Joystick pulled up
-                    game.rotate()  # Rotate block (alternative to button)
                     self.last_joystick_action = current_time
 
     def reset_game(self):
