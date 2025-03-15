@@ -202,10 +202,10 @@ class Rpi:
             joystick_x = self.read_joystick_x()
             if joystick_x is not None:
                 if joystick_x < 100:
-                    game.go_side(-1)  # Move left
+                    game.go_side(1)  # Move right
                     self.last_joystick_action = current_time
                 elif joystick_x > 225:
-                    game.go_side(1)  # Move right
+                    game.go_side(-1)  # Move left
                     self.last_joystick_action = current_time
 
             # Read Y-axis for down movement
