@@ -1,10 +1,12 @@
 import time
+import pygame
+import random
 
 import RPi.GPIO as GPIO
 import smbus2
 
-import pygame
-import random
+
+GPIO.setmode(GPIO.BCM)
 
 # Farben für die verschiedenen Tetris-Steine
 colors = [
@@ -146,23 +148,30 @@ class Tetris:
         self.score = 0  # Punkte zurücksetzen
         self.new_figure()  # Erzeuge einen neuen Tetris-Stein
 
+class Rpi:
+    def __init__(self):
+        self.bus = smbus2.SMBus(1)
+        self.address = 0x48
+        GPIO.setup(14, GPIO.IN)
+
+    def read_joystick(self):
+        try:
+            self.bus.write_byte(self.address, 0)
+            self.bus.read_byte(self.address)  # Dummy read to start conversion
+            return self.bus.read_byte(self.address)
+        except OSError as e:
+            print(f"I2C communication error: {e}")
+            return None
+
+    def get_button(self):
+        if GPIO.input(14) == 0:
+            return True
+        return False
+
 # Initialisiere das Spiel mit pygame
 pygame.init()
-GPIO.setmode(GPIO.BCM)
+rpi = Rpi()
 
-bus = smbus2.SMBus(1)
-address = 0x48  # Address of the PCF8591 ADC module
-
-GPIO.setup(14, GPIO.IN)
-
-def read_adc(channel):
-    try:
-        bus.write_byte(address, channel)
-        bus.read_byte(address)  # Dummy read to start conversion
-        return bus.read_byte(address)
-    except OSError as e:
-        print(f"I2C communication error: {e}")
-        return None
 
 # Farben für das Spiel
 BLACK = (0, 0, 0)
@@ -184,7 +193,7 @@ counter = 0
 
 pressing_down = False  # Wird verwendet, um festzustellen, ob der Spieler die Pfeiltaste nach unten gedrückt hält
 
-while not done:
+while True:
     if game.figure is None:
         game.new_figure()  # Erzeuge einen neuen Tetris-Stein, wenn keiner vorhanden ist
     counter += 1
@@ -196,15 +205,13 @@ while not done:
         if game.state == "start":
             game.go_down()
 
-    # Raspberry Pi GPIO initialisieren
-    vrx_value = read_adc(0)
-    if vrx_value is not None:
-        if vrx_value < 100:
-            game.go_side(-1)  # Move left
-        elif vrx_value > 225:
-            game.go_side(1)  # Move right
+    joystick_value = rpi.read_joystick()
+    if joystick_value < 100:
+        game.go_side(-1)  # Move left
+    elif joystick_value > 225:
+        game.go_side(1)  # Move right
 
-    if GPIO.input(14) == 0:
+    if rpi.get_button():
         game.rotate()  # Rotate the figure
         time.sleep(0.1)
 

@@ -1,9 +1,3 @@
-import RPi.GPIO as GPIO
-import smbus2
-
-# Set the GPIO mode to BCM
-GPIO.setmode(GPIO.BCM)
-
 # PCF8591        Raspberry Pi
 # --------       ------------
 # VCC      <-->  3.3V (Pin 1)
@@ -12,19 +6,11 @@ GPIO.setmode(GPIO.BCM)
 # SCL      <-->  SCL (GPIO 3, Pin 5)
 # AIN0     <-->  VRX (Joystick)
 
-# Set up I2C bus
-bus = smbus2.SMBus(1)
-address = 0x48  # Address of the PCF8591 ADC module
 
 
-def read_adc(channel):
-    try:
-        bus.write_byte(address, channel)
-        bus.read_byte(address)  # Dummy read to start conversion
-        return bus.read_byte(address)
-    except OSError as e:
-        print(f"I2C communication error: {e}")
-        return None
+
+# Set the GPIO mode to BCM
+
 
 
 #try:
