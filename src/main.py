@@ -156,6 +156,7 @@ class Rpi:
         GPIO.setup(14, GPIO.IN)
         self.last_joystick_action = time.time()
         self.joystick_delay = 0.2  # Delay in seconds between joystick actions
+        self.last_button_state = 1
 
     def read_joystick(self):
         try:
@@ -167,6 +168,9 @@ class Rpi:
             return None
 
     def get_button(self):
+        if self.last_button_state == GPIO.input(14):
+            return False
+
         if GPIO.input(14) == 0:
             return True
         return False
