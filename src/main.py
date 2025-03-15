@@ -168,6 +168,18 @@ class Rpi:
             return True
         return False
 
+    def process_joystick(self, game):
+        current_time = time.time()
+        if current_time - self.last_joystick_action >= self.joystick_delay:
+            joystick_value = self.read_joystick()
+            if joystick_value is not None:
+                if joystick_value < 100:
+                    game.go_side(-1)  # Move left
+                    self.last_joystick_action = current_time
+                elif joystick_value > 225:
+                    game.go_side(1)  # Move right
+                    self.last_joystick_action = current_time
+
 # Initialisiere das Spiel mit pygame
 pygame.init()
 rpi = Rpi()
@@ -193,7 +205,7 @@ counter = 0
 
 pressing_down = False  # Wird verwendet, um festzustellen, ob der Spieler die Pfeiltaste nach unten gedrückt hält
 
-while True:
+while not done:
     if game.figure is None:
         game.new_figure()  # Erzeuge einen neuen Tetris-Stein, wenn keiner vorhanden ist
     counter += 1
@@ -205,17 +217,12 @@ while True:
         if game.state == "start":
             game.go_down()
 
-    joystick_value = rpi.read_joystick()
-    if joystick_value < 100:
-        game.go_side(-1)  # Move left
-    elif joystick_value > 225:
-        game.go_side(1)  # Move right
+    rpi.process_joystick(game)
 
     if rpi.get_button():
         game.rotate()  # Rotate the figure
         time.sleep(0.1)
 
-#TODO
     # Verarbeite Tasteneingaben
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
