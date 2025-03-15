@@ -148,11 +148,14 @@ class Tetris:
         self.score = 0  # Punkte zurücksetzen
         self.new_figure()  # Erzeuge einen neuen Tetris-Stein
 
+
 class Rpi:
     def __init__(self):
         self.bus = smbus2.SMBus(1)
         self.address = 0x48
         GPIO.setup(14, GPIO.IN)
+        self.last_joystick_action = time.time()
+        self.joystick_delay = 0.2  # Delay in seconds between joystick actions
 
     def read_joystick(self):
         try:
