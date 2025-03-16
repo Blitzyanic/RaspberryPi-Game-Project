@@ -105,31 +105,25 @@ this repo is a pygame Tetris clone for the raspberry pi with GPIO controls
    ```sh
    $ git clone https://github.com/Blitzyanic/RaspberryPi-Game-Project.git
    ```
-2. Install Python Packages
+2. make sure the following packages are installed on your raspberry or linux development machine:
+   for Debian-Based (Rasbian)
+   ```sh
+   $ sudo apt install python3 python3-virtualenv
+   ```
+3. Install Python Packages
    ```sh
    $ python -m venv .venv
    $ source .venv/bin/activate
    $ pip install -r requirements.txt
    ```
-3. Follow the Docs for Raspberry Pi and GPIO setup
+4. Follow the Docs for Raspberry Pi and GPIO setup
 https://github.com/Blitzyanic/RaspberryPi-Game-Project/tree/main/docs
-4. start the Program 
+
+5. start the Program
   ```sh
-   $ python src/game/main.py
+   $ python src/main.py
    ```
 
-make sure the following packages are installed on your raspberry or linux development machine:
-for Debian-Based (Rasbian)
-```sh
-$ sudo apt install python3 python3-virtualenv
-```
-
-if you want to develop on a Windows machine
-```sh
-$ python -m venv .venv
-$ .\.venv\Scripts\Activate.ps1
-$ pip install -r requirements.txt
-```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -169,16 +163,6 @@ Project Link: [https://github.com/Blitzyanic/RaspberryPi-Game-Project](https://g
 
 # Usefull Links:
 [Python](https://www.python.org/)
-[PyGame](https://www.pygame.org/docs/)
-[PyCharm¹ (Recomended IDE)](https://www.jetbrains.com/de-de/pycharm/download/)
-
-<br>
-<br>
-<br>
-
-_¹PyCharm Community is free, the Download link is below the Professional_
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
