@@ -12,7 +12,7 @@
 <!-- PROJECT LOGO -->
 <br />
 <div align="center">
-  <a href="https://github.com/Blitzyanic/RaspberryPi-Game-Project">
+  <a href="https://github.com/YanicDiscomfort/RaspberryPi-Game-Project">
     <img src="docs/img/logo.jpg" alt="Logo" width="80" height="80">
   </a>
   <br>
@@ -23,12 +23,12 @@
   <p align="center">
     a Raspberry Pi Game with GPIO support created by Yanic and Nils for school
     <br />
-    <a href="https://github.com/Blitzyanic/RaspberryPi-Game-Project/tree/main/docs"><strong>Explore the docs »</strong></a>
+    <a href="https://github.com/YanicDiscomfort/RaspberryPi-Game-Project/tree/main/docs"><strong>Explore the docs »</strong></a>
     <br />
     <br />
-    <a href="https://github.com/Blitzyanic/RaspberryPi-Game-Project/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
+    <a href="https://github.com/YanicDiscomfort/RaspberryPi-Game-Project/issues/new?labels=bug&template=bug-report---.md">Report Bug</a>
     ·
-    <a href="https://github.com/Blitzyanic/RaspberryPi-Game-Project/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
+    <a href="https://github.com/YanicDiscomfort/RaspberryPi-Game-Project/issues/new?labels=enhancement&template=feature-request---.md">Request Feature</a>
   </p>
 </div>
 
@@ -127,15 +127,15 @@ https://github.com/Blitzyanic/RaspberryPi-Game-Project/tree/main/docs
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
-See the [open issues](https://github.com/Blitzyanic/RaspberryPi-Game-Project/issues) for a full list of proposed features (and known issues).
+See the [open issues](https://github.com/YanicDiscomfort/RaspberryPi-Game-Project/issues) for a full list of proposed features (and known issues).
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
 
 ### Top contributors:
 
-<a href="https://github.com/Blitzyanic/RaspberryPi-Game-Project/graphs/contributors">
-  <img src="https://contrib.rocks/image?repo=Blitzyanic/RaspberryPi-Game-Project" alt="contrib.rocks image" />
+<a href="https://github.com/YanicDiscomfort/RaspberryPi-Game-Project/graphs/contributors">
+  <img src="https://contrib.rocks/image?repo=YanicDiscomfort/RaspberryPi-Game-Project" alt="contrib.rocks image" />
 </a>
 
 
@@ -152,11 +152,11 @@ Distributed under the GNU GENERAL PUBLIC LICENSE V3. See `LICENSE` for more info
 <!-- CONTACT -->
 ## Contact
 
-Yanic - yanic.dev@gmail.com - https://github.com/Blitzyanic
+Yanic - yanic.dev@gmail.com - https://github.com/YanicDiscomfort
 
 Nils  - [@puckiiOLykos](https://x.com/puckiiOLykos) - https://github.com/derpuckii
 
-Project Link: [https://github.com/Blitzyanic/RaspberryPi-Game-Project](https://github.com/Blitzyanic/RaspberryPi-Game-Project)
+Project Link: [https://github.com/Blitzyanic/RaspberryPi-Game-Project](https://github.com/YanicDiscomfort/RaspberryPi-Game-Project)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -166,14 +166,14 @@ Project Link: [https://github.com/Blitzyanic/RaspberryPi-Game-Project](https://g
 
 <!-- MARKDOWN LINKS & IMAGES -->
 <!-- https://www.markdownguide.org/basic-syntax/#reference-style-links -->
-[contributors-shield]: https://img.shields.io/github/contributors/Blitzyanic/RaspberryPi-Game-Project.svg?style=for-the-badge
-[contributors-url]: https://github.com/Blitzyanic/RaspberryPi-Game-Project/graphs/contributors
-[forks-shield]: https://img.shields.io/github/forks/Blitzyanic/RaspberryPi-Game-Project.svg?style=for-the-badge
-[forks-url]: https://github.com/Blitzyanic/RaspberryPi-Game-Project/network/members
-[stars-shield]: https://img.shields.io/github/stars/Blitzyanic/RaspberryPi-Game-Project.svg?style=for-the-badge
-[stars-url]: https://github.com/Blitzyanic/RaspberryPi-Game-Project/stargazers
-[issues-shield]: https://img.shields.io/github/issues/Blitzyanic/RaspberryPi-Game-Project.svg?style=for-the-badge
-[issues-url]: https://github.com/Blitzyanic/RaspberryPi-Game-Project/issues
-[license-shield]: https://img.shields.io/github/license/Blitzyanic/RaspberryPi-Game-Project.svg?style=for-the-badge
-[license-url]: https://github.com/Blitzyanic/RaspberryPi-Game-Project/blob/master/LICENSE.txt
+[contributors-shield]: https://img.shields.io/github/contributors/YanicDiscomfort/RaspberryPi-Game-Project.svg?style=for-the-badge
+[contributors-url]: https://github.com/YanicDiscomfort/RaspberryPi-Game-Project/graphs/contributors
+[forks-shield]: https://img.shields.io/github/forks/YanicDiscomfort/RaspberryPi-Game-Project.svg?style=for-the-badge
+[forks-url]: https://github.com/YanicDiscomfort/RaspberryPi-Game-Project/network/members
+[stars-shield]: https://img.shields.io/github/stars/YanicDiscomfort/RaspberryPi-Game-Project.svg?style=for-the-badge
+[stars-url]: https://github.com/YanicDiscomfort/RaspberryPi-Game-Project/stargazers
+[issues-shield]: https://img.shields.io/github/issues/YanicDiscomfort/RaspberryPi-Game-Project.svg?style=for-the-badge
+[issues-url]: https://github.com/YanicDiscomfort/RaspberryPi-Game-Project/issues
+[license-shield]: https://img.shields.io/github/license/YanicDiscomfort/RaspberryPi-Game-Project.svg?style=for-the-badge
+[license-url]: https://github.com/YanicDiscomfort/RaspberryPi-Game-Project/blob/master/LICENSE.txt
 [product-screenshot]: docs/img/sample.png
